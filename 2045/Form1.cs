@@ -24,10 +24,10 @@ namespace _2045
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
-            button1.Visible = false;
             MatrixFeltoltes();
             frissit();
+            button1.Visible = false;
+           
 
         }
 
@@ -49,17 +49,19 @@ namespace _2045
                 for (int j = 0; j < szorzo; j++)
                 {
                     Label label = new Label();
-                    label.Size = new System.Drawing.Size(77, 21);
+                    label.Size = new Size(50, 50);
                     label.BackColor = Color.Red;
+                    label.Location = new Point(250 + i*64,j*64);
+                    label.TextAlign = ContentAlignment.MiddleCenter;
                     if (matrix[i,j] == 0)
                     {
-                        label.Text = "";
+                        label.Text = "x";
                     }
                     else
                     {
                         label.Text = Convert.ToString(matrix[i, j]);
                     }
-             
+                    this.Controls.Add(label);
                 }
             }
         }
