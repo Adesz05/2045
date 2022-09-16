@@ -16,7 +16,6 @@ namespace _2045
     {
         static int szorzo = 4;
         static int[,] matrix = new int[szorzo, szorzo];
-        static System.Windows.Forms.Label[,] labelmatrix = new System.Windows.Forms.Label[szorzo, szorzo];
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +25,20 @@ namespace _2045
         {
 
             button1.Visible = false;
+            MatrixFeltoltes();
             
+            
+        }
+
+        private void MatrixFeltoltes()
+        {
+            for (int i = 0; i < szorzo; i++)
+            {
+                for (int j = 0; j < szorzo; j++)
+                {
+                    matrix[i, j] = 0;
+                }
+            }
         }
     }
 }
