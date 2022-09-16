@@ -14,6 +14,7 @@ namespace _2045
 
     public partial class Form1 : Form
     {
+       public  static int lepesek = 0;
         static int szorzo = 4;
         static int[,] matrix = new int[szorzo, szorzo];
         public Form1()
@@ -30,10 +31,28 @@ namespace _2045
             buttonLe.Visible = true;
             buttonValtas.Visible = true;
             MatrixFeltoltes();
-            frissit();
+            Random();
+            Frissit();
             button1.Visible = false;
            
 
+        }
+
+        private void Random()
+        {
+            Random r = new Random();
+            int rszam = 0;
+            int rsor = 0;
+            int roszlop = 0;
+
+            rszam = r.Next(1, 3)*2;
+
+            rsor = r.Next(0, 3);
+            roszlop = r.Next(0, 3);
+
+          
+            matrix[rsor, roszlop] = rszam;
+            Frissit();
         }
 
         private void MatrixFeltoltes()
@@ -47,7 +66,7 @@ namespace _2045
             }
         }
 
-        private void frissit()
+        private void Frissit()
         {
             for (int i = 0; i < szorzo; i++)
             {
@@ -60,7 +79,7 @@ namespace _2045
                     label.TextAlign = ContentAlignment.MiddleCenter;
                     if (matrix[i,j] == 0)
                     {
-                        label.Text = "x";
+                        label.Text = "";
                     }
                     else
                     {
