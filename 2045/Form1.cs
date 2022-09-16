@@ -14,7 +14,7 @@ namespace _2045
 
     public partial class Form1 : Form
     {
-       public  static int lepesek = 0;
+       public  static int foglaltelemek = 0;
         static int szorzo = 4;
         static int[,] matrix = new int[szorzo, szorzo];
         static System.Windows.Forms.Label[,] matrixlabel = new System.Windows.Forms.Label[szorzo, szorzo];
@@ -44,13 +44,31 @@ namespace _2045
             Random r = new Random();
             int rszam, rsor, roszlop;
 
-            rszam = r.Next(1, 3)*2;
+            while (true)
+            {
+                rszam = r.Next(1, 3) * 2;
 
-            rsor = r.Next(0, 4);
-            roszlop = r.Next(0, 4);
+                rsor = r.Next(0, 4);
+                roszlop = r.Next(0, 4);
 
-          
-            matrix[rsor, roszlop] = rszam;
+                if (foglaltelemek > 15)
+                {
+                    MessageBox.Show("Vesztettél");
+                    break;
+                }
+                else
+                {
+                    if (matrix[rsor, roszlop] == 0)
+                    {
+                        matrix[rsor, roszlop] = rszam;
+                        foglaltelemek++;
+                        break;
+                    }
+                    
+                }
+            }
+           
+           
             Frissit2();
         }
 
@@ -63,6 +81,7 @@ namespace _2045
                     if (matrix[i,j]!=0)
                     {
                     matrixlabel[i, j].Text = matrix[i, j].ToString();
+
                     }
                     else
                     {
@@ -115,6 +134,11 @@ namespace _2045
                 RandomSzamGeneralas();
                 //MessageBox.Show("cica");
             }
+        }
+
+        private void buttonValtas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -96,6 +96,7 @@ namespace _2045
             this.buttonValtas.Text = "Váltás";
             this.buttonValtas.UseVisualStyleBackColor = true;
             this.buttonValtas.Visible = false;
+            this.buttonValtas.Click += new System.EventHandler(this.buttonValtas_Click);
             this.buttonValtas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonValtas_KeyDown);
             // 
             // Form1
