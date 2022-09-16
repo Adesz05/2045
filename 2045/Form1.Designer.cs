@@ -30,6 +30,11 @@ namespace _2045
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonFel = new System.Windows.Forms.Button();
+            this.buttonJobbra = new System.Windows.Forms.Button();
+            this.buttonLe = new System.Windows.Forms.Button();
+            this.buttonBalra = new System.Windows.Forms.Button();
+            this.buttonValtas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -42,11 +47,66 @@ namespace _2045
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonFel
+            // 
+            this.buttonFel.Location = new System.Drawing.Point(340, 201);
+            this.buttonFel.Name = "buttonFel";
+            this.buttonFel.Size = new System.Drawing.Size(75, 75);
+            this.buttonFel.TabIndex = 1;
+            this.buttonFel.Text = "Fel";
+            this.buttonFel.UseVisualStyleBackColor = true;
+            this.buttonFel.Visible = false;
+            // 
+            // buttonJobbra
+            // 
+            this.buttonJobbra.Location = new System.Drawing.Point(421, 282);
+            this.buttonJobbra.Name = "buttonJobbra";
+            this.buttonJobbra.Size = new System.Drawing.Size(75, 75);
+            this.buttonJobbra.TabIndex = 2;
+            this.buttonJobbra.Text = "Jobbra";
+            this.buttonJobbra.UseVisualStyleBackColor = true;
+            this.buttonJobbra.Visible = false;
+            // 
+            // buttonLe
+            // 
+            this.buttonLe.Location = new System.Drawing.Point(340, 363);
+            this.buttonLe.Name = "buttonLe";
+            this.buttonLe.Size = new System.Drawing.Size(75, 75);
+            this.buttonLe.TabIndex = 3;
+            this.buttonLe.Text = "Le";
+            this.buttonLe.UseVisualStyleBackColor = true;
+            this.buttonLe.Visible = false;
+            // 
+            // buttonBalra
+            // 
+            this.buttonBalra.Location = new System.Drawing.Point(259, 282);
+            this.buttonBalra.Name = "buttonBalra";
+            this.buttonBalra.Size = new System.Drawing.Size(75, 75);
+            this.buttonBalra.TabIndex = 4;
+            this.buttonBalra.Text = "Balra";
+            this.buttonBalra.UseVisualStyleBackColor = true;
+            this.buttonBalra.Visible = false;
+            // 
+            // buttonValtas
+            // 
+            this.buttonValtas.Location = new System.Drawing.Point(340, 282);
+            this.buttonValtas.Name = "buttonValtas";
+            this.buttonValtas.Size = new System.Drawing.Size(75, 75);
+            this.buttonValtas.TabIndex = 5;
+            this.buttonValtas.Text = "Váltás";
+            this.buttonValtas.UseVisualStyleBackColor = true;
+            this.buttonValtas.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonValtas);
+            this.Controls.Add(this.buttonBalra);
+            this.Controls.Add(this.buttonLe);
+            this.Controls.Add(this.buttonJobbra);
+            this.Controls.Add(this.buttonFel);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -57,6 +117,11 @@ namespace _2045
         #endregion
 
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonFel;
+        private System.Windows.Forms.Button buttonJobbra;
+        private System.Windows.Forms.Button buttonLe;
+        private System.Windows.Forms.Button buttonBalra;
+        private System.Windows.Forms.Button buttonValtas;
     }
 }
 
