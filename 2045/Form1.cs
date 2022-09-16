@@ -25,6 +25,11 @@ namespace _2045
         {
 
             button1.Visible = false;
+            buttonBalra.Visible = true;
+            buttonFel.Visible = true;
+            buttonJobbra.Visible = true;
+            buttonLe.Visible = true;
+            buttonValtas.Visible = true;
             MatrixFeltoltes();
             
             
