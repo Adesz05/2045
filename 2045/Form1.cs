@@ -17,6 +17,7 @@ namespace _2045
        public  static int lepesek = 0;
         static int szorzo = 4;
         static int[,] matrix = new int[szorzo, szorzo];
+        static System.Windows.Forms.Label[,] matrixlabel = new System.Windows.Forms.Label[szorzo, szorzo];
         public Form1()
         {
 
@@ -31,28 +32,44 @@ namespace _2045
             buttonLe.Visible = true;
             buttonValtas.Visible = true;
             MatrixFeltoltes();
-            Random();
             Frissit();
+            RandomSzamGeneralas();
             button1.Visible = false;
            
 
         }
 
-        private void Random()
+        private void RandomSzamGeneralas()
         {
             Random r = new Random();
-            int rszam = 0;
-            int rsor = 0;
-            int roszlop = 0;
+            int rszam, rsor, roszlop;
 
             rszam = r.Next(1, 3)*2;
 
-            rsor = r.Next(0, 3);
-            roszlop = r.Next(0, 3);
+            rsor = r.Next(0, 4);
+            roszlop = r.Next(0, 4);
 
           
             matrix[rsor, roszlop] = rszam;
-            Frissit();
+            Frissit2();
+        }
+
+        private void Frissit2()
+        {
+            for (int i = 0; i < szorzo; i++)
+            {
+                for (int j = 0; j < szorzo; j++)
+                {
+                    if (matrix[i,j]!=0)
+                    {
+                    matrixlabel[i, j].Text = matrix[i, j].ToString();
+                    }
+                    else
+                    {
+                        matrixlabel[i, j].Text = "";
+                    }
+                }
+            }
         }
 
         private void MatrixFeltoltes()
@@ -85,15 +102,19 @@ namespace _2045
                     {
                         label.Text = Convert.ToString(matrix[i, j]);
                     }
+                    matrixlabel[i, j] = label;
                     this.Controls.Add(label);
                 }
             }
         }
 
-        
-
-        
-
-        
+        private void buttonValtas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A)
+            {
+                RandomSzamGeneralas();
+                //MessageBox.Show("cica");
+            }
+        }
     }
 }

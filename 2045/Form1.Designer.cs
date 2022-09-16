@@ -92,12 +92,11 @@ namespace _2045
             this.buttonValtas.Location = new System.Drawing.Point(354, 485);
             this.buttonValtas.Name = "buttonValtas";
             this.buttonValtas.Size = new System.Drawing.Size(75, 75);
-        //    this.buttonValtas.TabIndex = 5;
+            this.buttonValtas.TabIndex = 0;
             this.buttonValtas.Text = "Váltás";
             this.buttonValtas.UseVisualStyleBackColor = true;
             this.buttonValtas.Visible = false;
-//            this.buttonValtas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonValtas_KeyDown);
-//            this.buttonValtas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buttonValtas_KeyPress);
+            this.buttonValtas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonValtas_KeyDown);
             // 
             // Form1
             // 
@@ -112,7 +111,6 @@ namespace _2045
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
-//            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
 
         }
