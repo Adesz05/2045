@@ -39,7 +39,7 @@ namespace _2045
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(340, 282);
+            this.button1.Location = new System.Drawing.Point(353, 485);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace _2045
             // 
             // buttonFel
             // 
-            this.buttonFel.Location = new System.Drawing.Point(340, 201);
+            this.buttonFel.Location = new System.Drawing.Point(353, 404);
             this.buttonFel.Name = "buttonFel";
             this.buttonFel.Size = new System.Drawing.Size(75, 75);
             this.buttonFel.TabIndex = 1;
@@ -59,7 +59,7 @@ namespace _2045
             // 
             // buttonJobbra
             // 
-            this.buttonJobbra.Location = new System.Drawing.Point(421, 282);
+            this.buttonJobbra.Location = new System.Drawing.Point(434, 485);
             this.buttonJobbra.Name = "buttonJobbra";
             this.buttonJobbra.Size = new System.Drawing.Size(75, 75);
             this.buttonJobbra.TabIndex = 2;
@@ -69,7 +69,7 @@ namespace _2045
             // 
             // buttonLe
             // 
-            this.buttonLe.Location = new System.Drawing.Point(340, 363);
+            this.buttonLe.Location = new System.Drawing.Point(353, 566);
             this.buttonLe.Name = "buttonLe";
             this.buttonLe.Size = new System.Drawing.Size(75, 75);
             this.buttonLe.TabIndex = 3;
@@ -79,7 +79,7 @@ namespace _2045
             // 
             // buttonBalra
             // 
-            this.buttonBalra.Location = new System.Drawing.Point(259, 282);
+            this.buttonBalra.Location = new System.Drawing.Point(272, 485);
             this.buttonBalra.Name = "buttonBalra";
             this.buttonBalra.Size = new System.Drawing.Size(75, 75);
             this.buttonBalra.TabIndex = 4;
@@ -89,19 +89,21 @@ namespace _2045
             // 
             // buttonValtas
             // 
-            this.buttonValtas.Location = new System.Drawing.Point(340, 282);
+            this.buttonValtas.Location = new System.Drawing.Point(354, 485);
             this.buttonValtas.Name = "buttonValtas";
             this.buttonValtas.Size = new System.Drawing.Size(75, 75);
-            this.buttonValtas.TabIndex = 5;
+        //    this.buttonValtas.TabIndex = 5;
             this.buttonValtas.Text = "Váltás";
             this.buttonValtas.UseVisualStyleBackColor = true;
             this.buttonValtas.Visible = false;
+//            this.buttonValtas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonValtas_KeyDown);
+//            this.buttonValtas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.buttonValtas_KeyPress);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 881);
             this.Controls.Add(this.buttonValtas);
             this.Controls.Add(this.buttonBalra);
             this.Controls.Add(this.buttonLe);
@@ -110,6 +112,7 @@ namespace _2045
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+//            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
 
         }
