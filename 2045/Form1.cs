@@ -24,11 +24,11 @@ namespace _2045
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frissit();
+         
             button1.Visible = false;
             MatrixFeltoltes();
-            
-            
+            frissit();
+
         }
 
         private void MatrixFeltoltes()
@@ -48,7 +48,18 @@ namespace _2045
             {
                 for (int j = 0; j < szorzo; j++)
                 {
-                    
+                    Label label = new Label();
+                    label.Size = new System.Drawing.Size(77, 21);
+                    label.BackColor = Color.Red;
+                    if (matrix[i,j] == 0)
+                    {
+                        label.Text = "";
+                    }
+                    else
+                    {
+                        label.Text = Convert.ToString(matrix[i, j]);
+                    }
+             
                 }
             }
         }
