@@ -195,7 +195,11 @@ namespace _2045
                     }
                 }
             }
-            RandomSzamGeneralas();
+            if (valtozas)
+            {
+                RandomSzamGeneralas();
+                valtozas = false;
+            }
         }
 
         private void buttonLe_Click(object sender, EventArgs e)
@@ -225,7 +229,11 @@ namespace _2045
                         }
                     }
                 }
-            RandomSzamGeneralas();
+            if (valtozas)
+            {
+                RandomSzamGeneralas();
+                valtozas = false;
+            }
         }
            
         
@@ -256,7 +264,11 @@ namespace _2045
                     }
                 }
             }
-            RandomSzamGeneralas();
+            if (valtozas)
+            {
+                RandomSzamGeneralas();
+                valtozas = false;
+            }
         }
 
 
