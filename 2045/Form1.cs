@@ -15,6 +15,7 @@ namespace _2045
     public partial class Form1 : Form
     {
        public  static int foglaltelemek = 0;
+        static bool  valtozas = false;
         static int szorzo = 4;
         static int[,] matrix = new int[szorzo, szorzo];
         static System.Windows.Forms.Label[,] matrixlabel = new System.Windows.Forms.Label[szorzo, szorzo];
@@ -64,8 +65,6 @@ namespace _2045
                     }
                 }
             }
-           
-           
             Frissit2();
         }
 
@@ -146,9 +145,11 @@ namespace _2045
                         {
                             if (matrix[sor-i-1,oszlop] == 0)
                             {
+                                valtozas = true;
                                 matrix[sor - 1 - i, oszlop] = matrix[sor - i, oszlop];
                                 matrix[sor-i, oszlop] = 0;
                                 Frissit2();
+                               
                             }
                             else
                             {
@@ -159,6 +160,12 @@ namespace _2045
                     }
                 }
             }
+            if (valtozas)
+            {
+                RandomSzamGeneralas();
+                valtozas = false;
+            }
+            
         }
 
         private void buttonJobbra_Click(object sender, EventArgs e)
@@ -180,6 +187,7 @@ namespace _2045
                             }
                             else
                             {
+                            
                                 // Ha a számok megegyeznek akk csuszas;
                                 break;
                             }
@@ -187,6 +195,7 @@ namespace _2045
                     }
                 }
             }
+            RandomSzamGeneralas();
         }
 
         private void buttonLe_Click(object sender, EventArgs e)
@@ -205,7 +214,8 @@ namespace _2045
                                     matrix[sor + 1 + i, oszlop] = matrix[sor + i, oszlop];
                                     matrix[sor + i, oszlop] = 0;
                                     Frissit2();
-                                }
+                                
+                            }
                                 else
                                 {
                                     // Ha a számok megegyeznek akk csuszas;
@@ -215,7 +225,8 @@ namespace _2045
                         }
                     }
                 }
-            }
+            RandomSzamGeneralas();
+        }
            
         
 
@@ -234,6 +245,7 @@ namespace _2045
                                 matrix[sor , oszlop - 1 - i] = matrix[sor , oszlop - i];
                                 matrix[sor, oszlop - i] = 0;
                                 Frissit2();
+                                
                             }
                             else
                             {
@@ -244,6 +256,9 @@ namespace _2045
                     }
                 }
             }
+            RandomSzamGeneralas();
         }
+
+
     }
 }
