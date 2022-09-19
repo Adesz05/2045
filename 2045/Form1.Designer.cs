@@ -56,6 +56,7 @@ namespace _2045
             this.buttonFel.Text = "Fel";
             this.buttonFel.UseVisualStyleBackColor = true;
             this.buttonFel.Visible = false;
+            this.buttonFel.Click += new System.EventHandler(this.buttonFel_Click);
             // 
             // buttonJobbra
             // 
@@ -66,6 +67,7 @@ namespace _2045
             this.buttonJobbra.Text = "Jobbra";
             this.buttonJobbra.UseVisualStyleBackColor = true;
             this.buttonJobbra.Visible = false;
+            this.buttonJobbra.Click += new System.EventHandler(this.buttonJobbra_Click);
             // 
             // buttonLe
             // 
@@ -76,6 +78,7 @@ namespace _2045
             this.buttonLe.Text = "Le";
             this.buttonLe.UseVisualStyleBackColor = true;
             this.buttonLe.Visible = false;
+            this.buttonLe.Click += new System.EventHandler(this.buttonLe_Click);
             // 
             // buttonBalra
             // 
@@ -86,6 +89,7 @@ namespace _2045
             this.buttonBalra.Text = "Balra";
             this.buttonBalra.UseVisualStyleBackColor = true;
             this.buttonBalra.Visible = false;
+            this.buttonBalra.Click += new System.EventHandler(this.buttonBalra_Click);
             // 
             // buttonValtas
             // 
@@ -96,7 +100,6 @@ namespace _2045
             this.buttonValtas.Text = "Váltás";
             this.buttonValtas.UseVisualStyleBackColor = true;
             this.buttonValtas.Visible = false;
-            this.buttonValtas.Click += new System.EventHandler(this.buttonValtas_Click);
             this.buttonValtas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonValtas_KeyDown);
             // 
             // Form1

@@ -35,8 +35,6 @@ namespace _2045
             Frissit();
             RandomSzamGeneralas();
             button1.Visible = false;
-           
-
         }
 
         private void RandomSzamGeneralas()
@@ -64,7 +62,6 @@ namespace _2045
                         foglaltelemek++;
                         break;
                     }
-                    
                 }
             }
            
@@ -111,7 +108,7 @@ namespace _2045
                     Label label = new Label();
                     label.Size = new Size(50, 50);
                     label.BackColor = Color.Red;
-                    label.Location = new Point(250 + i*64,j*64);
+                    label.Location = new Point(250 + j*64,i*64);
                     label.TextAlign = ContentAlignment.MiddleCenter;
                     if (matrix[i,j] == 0)
                     {
@@ -136,9 +133,117 @@ namespace _2045
             }
         }
 
-        private void buttonValtas_Click(object sender, EventArgs e)
-        {
 
+        private void buttonFel_Click(object sender, EventArgs e)
+        {
+            for (int sor = 0; sor < szorzo; sor++)
+            {
+                for (int oszlop = 0; oszlop < szorzo; oszlop++)
+                {
+                    if (matrix[sor, oszlop] != 0)
+                    {
+                        for (int i = 0; i < sor; i++)
+                        {
+                            if (matrix[sor-i-1,oszlop] == 0)
+                            {
+                                matrix[sor - 1 - i, oszlop] = matrix[sor - i, oszlop];
+                                matrix[sor-i, oszlop] = 0;
+                                Frissit2();
+                            }
+                            else
+                            {
+                                // Ha a számok megegyeznek akk csuszas;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void buttonJobbra_Click(object sender, EventArgs e)
+        {
+            for (int sor = 3; sor > -1; sor--)
+            {
+                for (int oszlop = 3; oszlop > -1; oszlop--)
+                {
+                    if (matrix[sor, oszlop] != 0)
+                    {
+                        for (int i = 0; i < 3 - oszlop; i++)
+                        {
+
+                            if (matrix[sor , oszlop + i + 1] == 0)
+                            {
+                                matrix[sor, oszlop + 1 + i] = matrix[sor , oszlop + i];
+                                matrix[sor , oszlop + i] = 0;
+                                Frissit2();
+                            }
+                            else
+                            {
+                                // Ha a számok megegyeznek akk csuszas;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void buttonLe_Click(object sender, EventArgs e)
+        {
+                for (int sor = 3; sor > -1; sor--)
+                {
+                    for (int oszlop = 3; oszlop > -1 ; oszlop--)
+                    {
+                        if (matrix[sor, oszlop] != 0)
+                        {
+                            for (int i = 0; i < 3 - sor; i++)
+                            {
+
+                                if (matrix[sor + i + 1, oszlop] == 0)
+                                {
+                                    matrix[sor + 1 + i, oszlop] = matrix[sor + i, oszlop];
+                                    matrix[sor + i, oszlop] = 0;
+                                    Frissit2();
+                                }
+                                else
+                                {
+                                    // Ha a számok megegyeznek akk csuszas;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+           
+        
+
+        private void buttonBalra_Click(object sender, EventArgs e)
+        {
+            for (int sor = 0; sor < szorzo; sor++)
+            {
+                for (int oszlop = 0; oszlop < szorzo; oszlop++)
+                {
+                    if (matrix[sor, oszlop] != 0)
+                    {
+                        for (int i = 0; i < oszlop; i++)
+                        {
+                            if (matrix[sor , oszlop - i - 1] == 0)
+                            {
+                                matrix[sor , oszlop - 1 - i] = matrix[sor , oszlop - i];
+                                matrix[sor, oszlop - i] = 0;
+                                Frissit2();
+                            }
+                            else
+                            {
+                                // Ha a számok megegyeznek akk csuszas;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
