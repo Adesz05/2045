@@ -130,25 +130,31 @@ namespace _2045
         {
             if (e.KeyCode == Keys.A)
             {
-                
+                BalraFele();
             }
             if (e.KeyCode == Keys.W)
             {
-
+                FelFele();
             }
             if (e.KeyCode == Keys.D)
             {
-
+                JobbraFele();
             }
             if (e.KeyCode == Keys.S)
             {
-
+                LeFele();
             }
          
         }
 
 
         private void buttonFel_Click(object sender, EventArgs e)
+        {
+            FelFele();
+            
+        }
+
+        private void FelFele()
         {
             for (int sor = 0; sor < szorzo; sor++)
             {
@@ -158,15 +164,15 @@ namespace _2045
                     {
                         for (int i = 0; i < sor; i++)
                         {
-                            if (matrix[sor-i-1,oszlop] == 0)
+                            if (matrix[sor - i - 1, oszlop] == 0)
                             {
                                 valtozas = true;
                                 matrix[sor - 1 - i, oszlop] = matrix[sor - i, oszlop];
-                                matrix[sor-i, oszlop] = 0;
+                                matrix[sor - i, oszlop] = 0;
                                 Frissit2();
-                               
+
                             }
-                            else if(matrix[sor - i - 1, oszlop]== matrix[sor - i, oszlop])
+                            else if (matrix[sor - i - 1, oszlop] == matrix[sor - i, oszlop])
                             {
                                 matrix[sor - i - 1, oszlop] += matrix[sor - i, oszlop];
                                 matrix[sor - i, oszlop] = 0;
@@ -185,10 +191,14 @@ namespace _2045
                 RandomSzamGeneralas();
                 valtozas = false;
             }
-            
         }
 
         private void buttonJobbra_Click(object sender, EventArgs e)
+        {
+            JobbraFele();
+        }
+
+        private void JobbraFele()
         {
             for (int sor = 3; sor > -1; sor--)
             {
@@ -199,21 +209,21 @@ namespace _2045
                         for (int i = 0; i < 3 - oszlop; i++)
                         {
 
-                            if (matrix[sor , oszlop + i + 1] == 0)
+                            if (matrix[sor, oszlop + i + 1] == 0)
                             {
-                                matrix[sor, oszlop + 1 + i] = matrix[sor , oszlop + i];
-                                matrix[sor , oszlop + i] = 0;
+                                matrix[sor, oszlop + 1 + i] = matrix[sor, oszlop + i];
+                                matrix[sor, oszlop + i] = 0;
                                 Frissit2();
                             }
                             else if (matrix[sor, oszlop + 1 + i] == matrix[sor, oszlop + i])
                             {
-                                matrix[sor, oszlop +1 + i] += matrix[sor, oszlop + i];
+                                matrix[sor, oszlop + 1 + i] += matrix[sor, oszlop + i];
                                 matrix[sor, oszlop + i] = 0;
                                 Frissit2();
                             }
                             else
                             {
-                            
+
                                 // Ha a számok megegyeznek akk csuszas;
                                 break;
                             }
@@ -230,47 +240,55 @@ namespace _2045
 
         private void buttonLe_Click(object sender, EventArgs e)
         {
-                for (int sor = 3; sor > -1; sor--)
-                {
-                    for (int oszlop = 3; oszlop > -1 ; oszlop--)
-                    {
-                        if (matrix[sor, oszlop] != 0)
-                        {
-                            for (int i = 0; i < 3 - sor; i++)
-                            {
+            LeFele();
+        }
 
-                                if (matrix[sor + i + 1, oszlop] == 0)
-                                {
-                                    matrix[sor + 1 + i, oszlop] = matrix[sor + i, oszlop];
-                                    matrix[sor + i, oszlop] = 0;
-                                    Frissit2();
-                                
-                                }
-                                else if (matrix[sor + 1 + i, oszlop] == matrix[sor + i, oszlop])
-                                {
+        private void LeFele()
+        {
+            for (int sor = 3; sor > -1; sor--)
+            {
+                for (int oszlop = 3; oszlop > -1; oszlop--)
+                {
+                    if (matrix[sor, oszlop] != 0)
+                    {
+                        for (int i = 0; i < 3 - sor; i++)
+                        {
+
+                            if (matrix[sor + i + 1, oszlop] == 0)
+                            {
+                                matrix[sor + 1 + i, oszlop] = matrix[sor + i, oszlop];
+                                matrix[sor + i, oszlop] = 0;
+                                Frissit2();
+
+                            }
+                            else if (matrix[sor + 1 + i, oszlop] == matrix[sor + i, oszlop])
+                            {
                                 matrix[sor + 1 + i, oszlop] += matrix[sor + i, oszlop];
                                 matrix[sor + i, oszlop] = 0;
-                                    Frissit2();
-                                }
-                                else
-                                {
-                                    // Ha a számok megegyeznek akk csuszas;
-                                    break;
-                                }
+                                Frissit2();
+                            }
+                            else
+                            {
+                                // Ha a számok megegyeznek akk csuszas;
+                                break;
                             }
                         }
                     }
                 }
+            }
             if (valtozas)
             {
                 RandomSzamGeneralas();
                 valtozas = false;
             }
         }
-           
-        
 
         private void buttonBalra_Click(object sender, EventArgs e)
+        {
+            BalraFele();
+        }
+
+        private void BalraFele()
         {
             for (int sor = 0; sor < szorzo; sor++)
             {
@@ -280,12 +298,12 @@ namespace _2045
                     {
                         for (int i = 0; i < oszlop; i++)
                         {
-                            if (matrix[sor , oszlop - i - 1] == 0)
+                            if (matrix[sor, oszlop - i - 1] == 0)
                             {
-                                matrix[sor , oszlop - 1 - i] = matrix[sor , oszlop - i];
+                                matrix[sor, oszlop - 1 - i] = matrix[sor, oszlop - i];
                                 matrix[sor, oszlop - i] = 0;
                                 Frissit2();
-                                
+
                             }
                             else if (matrix[sor, oszlop - 1 - i] == matrix[sor, oszlop - i])
                             {
@@ -308,7 +326,5 @@ namespace _2045
                 valtozas = false;
             }
         }
-
-
     }
 }
