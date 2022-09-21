@@ -35,6 +35,7 @@ namespace _2045
             MatrixFeltoltes();
             Frissit();
             RandomSzamGeneralas();
+            RandomSzamGeneralas();
             button1.Visible = false;
         }
 
@@ -86,6 +87,7 @@ namespace _2045
                     }
                 }
             }
+
         }
 
         private void MatrixFeltoltes()
@@ -128,9 +130,21 @@ namespace _2045
         {
             if (e.KeyCode == Keys.A)
             {
-                RandomSzamGeneralas();
-                //MessageBox.Show("cica");
+                
             }
+            if (e.KeyCode == Keys.W)
+            {
+
+            }
+            if (e.KeyCode == Keys.D)
+            {
+
+            }
+            if (e.KeyCode == Keys.S)
+            {
+
+            }
+         
         }
 
 
