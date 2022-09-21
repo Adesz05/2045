@@ -60,7 +60,7 @@ namespace _2045
                     if (matrix[rsor, roszlop] == 0)
                     {
                         matrix[rsor, roszlop] = rszam;
-                        foglaltelemek++;
+                        //foglaltelemek++;
                         break;
                     }
                 }
@@ -152,9 +152,14 @@ namespace _2045
                                 Frissit2();
                                
                             }
+                            else if(matrix[sor - i - 1, oszlop]== matrix[sor - i, oszlop])
+                            {
+                                matrix[sor - i - 1, oszlop] += matrix[sor - i, oszlop];
+                                matrix[sor - i, oszlop] = 0;
+                                Frissit2();
+                            }
                             else
                             {
-                                // Ha a számok megegyeznek akk csuszas;
                                 break;
                             }
                         }
@@ -184,6 +189,12 @@ namespace _2045
                             {
                                 matrix[sor, oszlop + 1 + i] = matrix[sor , oszlop + i];
                                 matrix[sor , oszlop + i] = 0;
+                                Frissit2();
+                            }
+                            else if (matrix[sor, oszlop + 1 + i] == matrix[sor, oszlop + i])
+                            {
+                                matrix[sor, oszlop +1 + i] += matrix[sor, oszlop + i];
+                                matrix[sor, oszlop + i] = 0;
                                 Frissit2();
                             }
                             else
@@ -220,7 +231,13 @@ namespace _2045
                                     matrix[sor + i, oszlop] = 0;
                                     Frissit2();
                                 
-                            }
+                                }
+                                else if (matrix[sor + 1 + i, oszlop] == matrix[sor + i, oszlop])
+                                {
+                                matrix[sor + 1 + i, oszlop] += matrix[sor + i, oszlop];
+                                matrix[sor + i, oszlop] = 0;
+                                    Frissit2();
+                                }
                                 else
                                 {
                                     // Ha a számok megegyeznek akk csuszas;
@@ -255,6 +272,12 @@ namespace _2045
                                 matrix[sor, oszlop - i] = 0;
                                 Frissit2();
                                 
+                            }
+                            else if (matrix[sor, oszlop - 1 - i] == matrix[sor, oszlop - i])
+                            {
+                                matrix[sor, oszlop - 1 - i] += matrix[sor, oszlop - i];
+                                matrix[sor, oszlop - i] = 0;
+                                Frissit2();
                             }
                             else
                             {
