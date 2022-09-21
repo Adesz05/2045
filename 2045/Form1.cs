@@ -70,6 +70,7 @@ namespace _2045
 
         private void Frissit2()
         {
+            valtozas = true;
             for (int i = 0; i < szorzo; i++)
             {
                 for (int j = 0; j < szorzo; j++)
