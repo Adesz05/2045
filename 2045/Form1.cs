@@ -18,6 +18,9 @@ namespace _2045
         static bool  valtozas = false;
         static int szorzo = 4;
         static int[,] matrix = new int[szorzo, szorzo];
+        static int[,] matrixmasolat = new int[szorzo, szorzo];
+        static bool[,] boolmatrix = new bool[szorzo, szorzo];
+        static bool fel, le,jobbra, balra = false;
         static System.Windows.Forms.Label[,] matrixlabel = new System.Windows.Forms.Label[szorzo, szorzo];
         public Form1()
         {
@@ -79,16 +82,81 @@ namespace _2045
                     if (matrix[i,j]!=0)
                     {
                     matrixlabel[i, j].Text = matrix[i, j].ToString();
-
                     }
                     else
                     {
                         matrixlabel[i, j].Text = "";
+                        matrixlabel[i, j].BackColor = Color.FromArgb(199,185,172);
                     }
+                    if (matrixlabel[i, j].Text == "2")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(238,228,218);
+                        matrixlabel[i, j].ForeColor = Color.Black;
+                    }
+                    if (matrixlabel[i, j].Text == "4")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(238, 225, 190);
+                        matrixlabel[i, j].ForeColor = Color.Black;
+                    }
+                    if (matrixlabel[i, j].Text == "8")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(243, 178, 122);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+                    if (matrixlabel[i, j].Text == "16")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(246, 150, 100);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+                    if (matrixlabel[i, j].Text == "32")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(247, 124, 95);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+                    if (matrixlabel[i, j].Text == "64")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(247, 95, 59);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+                    if (matrixlabel[i, j].Text == "128")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(237, 208, 115);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+                    if (matrixlabel[i, j].Text == "256")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(237, 204, 99);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+                    if (matrixlabel[i, j].Text == "512")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(240, 196, 95);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+                    if (matrixlabel[i, j].Text == "1024")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(237, 197, 62);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+                    if (matrixlabel[i, j].Text == "2048")
+                    {
+                        matrixlabel[i, j].BackColor = Color.FromArgb(240, 196, 27);
+                        matrixlabel[i, j].ForeColor = Color.White;
+                    }
+
+
                 }
+                
+               
             }
+            le = false;
+            fel = false;
+            jobbra = false;
+            balra = false;
 
         }
+
+       
 
         private void MatrixFeltoltes()
         {
@@ -97,6 +165,7 @@ namespace _2045
                 for (int j = 0; j < szorzo; j++)
                 {
                     matrix[i, j] = 0;
+                    boolmatrix[i, j] = true;
                 }
             }
         }
@@ -109,9 +178,10 @@ namespace _2045
                 {
                     Label label = new Label();
                     label.Size = new Size(50, 50);
-                    label.BackColor = Color.Red;
-                    label.Location = new Point(250 + j*64,i*64);
+                    label.BackColor = Color.White;
+                    label.Location = new Point(100 + j*64,50+i*64);
                     label.TextAlign = ContentAlignment.MiddleCenter;
+                    label.Font = new Font("Arial", 12, FontStyle.Bold);
                     if (matrix[i,j] == 0)
                     {
                         label.Text = "";
@@ -169,13 +239,18 @@ namespace _2045
                                 valtozas = true;
                                 matrix[sor - 1 - i, oszlop] = matrix[sor - i, oszlop];
                                 matrix[sor - i, oszlop] = 0;
+
+                                boolmatrix[sor - 1 - i, oszlop] = boolmatrix[sor - i, oszlop];
+                                boolmatrix[sor - i, oszlop] = true;
+
                                 Frissit2();
 
                             }
-                            else if (matrix[sor - i - 1, oszlop] == matrix[sor - i, oszlop])
+                            else if (matrix[sor - i - 1, oszlop] == matrix[sor - i, oszlop] && boolmatrix[sor - i - 1, oszlop] == true && boolmatrix[sor - i, oszlop] == true)
                             {
                                 matrix[sor - i - 1, oszlop] += matrix[sor - i, oszlop];
                                 matrix[sor - i, oszlop] = 0;
+                                boolmatrix[sor - i - 1, oszlop] = false;
                                 Frissit2();
                             }
                             else
@@ -183,6 +258,7 @@ namespace _2045
                                 break;
                             }
                         }
+                        Vissza();
                     }
                 }
             }
@@ -190,6 +266,32 @@ namespace _2045
             {
                 RandomSzamGeneralas();
                 valtozas = false;
+            }
+            else
+            {
+                fel = true;
+               Vesztettele();
+                
+            }
+        }
+
+        private void Vesztettele()
+        {
+            matrixmasolat = matrix;
+            if (fel == true && le ==true&& jobbra == true && balra == true)
+            {
+                MessageBox.Show("Vesztettél");
+            }
+        }
+
+        private void Vissza()
+        {
+            for (int i = 0; i < szorzo; i++)
+            {
+                for (int j = 0; j < szorzo; j++)
+                {
+                    boolmatrix[i, j] = true;
+                }
             }
         }
 
@@ -213,21 +315,25 @@ namespace _2045
                             {
                                 matrix[sor, oszlop + 1 + i] = matrix[sor, oszlop + i];
                                 matrix[sor, oszlop + i] = 0;
+
+                                boolmatrix[sor, oszlop + 1 + i] = boolmatrix[sor, oszlop + i];
+                                boolmatrix[sor, oszlop + i] = true;
                                 Frissit2();
                             }
-                            else if (matrix[sor, oszlop + 1 + i] == matrix[sor, oszlop + i])
+                            else if (matrix[sor, oszlop + 1 + i] == matrix[sor, oszlop + i] && boolmatrix[sor, oszlop + 1 + i] ==true && boolmatrix[sor, oszlop + i] == true)
                             {
                                 matrix[sor, oszlop + 1 + i] += matrix[sor, oszlop + i];
                                 matrix[sor, oszlop + i] = 0;
+                                boolmatrix[sor, oszlop + 1 + i] = false;
                                 Frissit2();
                             }
                             else
-                            {
-
+                            { 
                                 // Ha a számok megegyeznek akk csuszas;
                                 break;
                             }
                         }
+                        Vissza();
                     }
                 }
             }
@@ -235,6 +341,11 @@ namespace _2045
             {
                 RandomSzamGeneralas();
                 valtozas = false;
+            }
+            else
+            {
+                jobbra = true;
+                Vesztettele();
             }
         }
 
@@ -258,13 +369,16 @@ namespace _2045
                             {
                                 matrix[sor + 1 + i, oszlop] = matrix[sor + i, oszlop];
                                 matrix[sor + i, oszlop] = 0;
+                                boolmatrix[sor + 1 + i, oszlop] = boolmatrix[sor + i, oszlop];
+                                boolmatrix[sor + i, oszlop] = true;
                                 Frissit2();
 
                             }
-                            else if (matrix[sor + 1 + i, oszlop] == matrix[sor + i, oszlop])
+                            else if (matrix[sor + 1 + i, oszlop] == matrix[sor + i, oszlop] && boolmatrix[sor + 1 + i, oszlop] == true && boolmatrix[sor + i, oszlop] == true)
                             {
                                 matrix[sor + 1 + i, oszlop] += matrix[sor + i, oszlop];
                                 matrix[sor + i, oszlop] = 0;
+                                boolmatrix[sor + 1 + i, oszlop] = false;
                                 Frissit2();
                             }
                             else
@@ -273,6 +387,7 @@ namespace _2045
                                 break;
                             }
                         }
+                        Vissza();
                     }
                 }
             }
@@ -281,13 +396,17 @@ namespace _2045
                 RandomSzamGeneralas();
                 valtozas = false;
             }
+            else
+            {
+                le = true;
+                Vesztettele();
+            }
         }
 
         private void buttonBalra_Click(object sender, EventArgs e)
         {
             BalraFele();
         }
-
         private void BalraFele()
         {
             for (int sor = 0; sor < szorzo; sor++)
@@ -302,13 +421,16 @@ namespace _2045
                             {
                                 matrix[sor, oszlop - 1 - i] = matrix[sor, oszlop - i];
                                 matrix[sor, oszlop - i] = 0;
+                                boolmatrix[sor, oszlop - 1 - i] = boolmatrix[sor, oszlop - i];
+                                boolmatrix[sor, oszlop - i] = true;
                                 Frissit2();
 
                             }
-                            else if (matrix[sor, oszlop - 1 - i] == matrix[sor, oszlop - i])
+                            else if (matrix[sor, oszlop - 1 - i] == matrix[sor, oszlop - i] && boolmatrix[sor, oszlop - 1 - i] == true && boolmatrix[sor, oszlop - i] == true)
                             {
                                 matrix[sor, oszlop - 1 - i] += matrix[sor, oszlop - i];
                                 matrix[sor, oszlop - i] = 0;
+                                boolmatrix[sor, oszlop - 1 - i] = false;
                                 Frissit2();
                             }
                             else
@@ -317,6 +439,7 @@ namespace _2045
                                 break;
                             }
                         }
+                        Vissza();
                     }
                 }
             }
@@ -324,6 +447,11 @@ namespace _2045
             {
                 RandomSzamGeneralas();
                 valtozas = false;
+            }
+            else
+            {
+                balra = true;
+                Vesztettele();
             }
         }
     }
