@@ -35,11 +35,13 @@ namespace _2045
             this.buttonLe = new System.Windows.Forms.Button();
             this.buttonBalra = new System.Windows.Forms.Button();
             this.buttonValtas = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(182, 428);
+            this.button1.Location = new System.Drawing.Point(187, 417);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -49,7 +51,7 @@ namespace _2045
             // 
             // buttonFel
             // 
-            this.buttonFel.Location = new System.Drawing.Point(182, 347);
+            this.buttonFel.Location = new System.Drawing.Point(187, 336);
             this.buttonFel.Name = "buttonFel";
             this.buttonFel.Size = new System.Drawing.Size(75, 75);
             this.buttonFel.TabIndex = 1;
@@ -60,7 +62,7 @@ namespace _2045
             // 
             // buttonJobbra
             // 
-            this.buttonJobbra.Location = new System.Drawing.Point(263, 428);
+            this.buttonJobbra.Location = new System.Drawing.Point(268, 417);
             this.buttonJobbra.Name = "buttonJobbra";
             this.buttonJobbra.Size = new System.Drawing.Size(75, 75);
             this.buttonJobbra.TabIndex = 2;
@@ -71,7 +73,7 @@ namespace _2045
             // 
             // buttonLe
             // 
-            this.buttonLe.Location = new System.Drawing.Point(182, 509);
+            this.buttonLe.Location = new System.Drawing.Point(187, 498);
             this.buttonLe.Name = "buttonLe";
             this.buttonLe.Size = new System.Drawing.Size(75, 75);
             this.buttonLe.TabIndex = 3;
@@ -82,7 +84,7 @@ namespace _2045
             // 
             // buttonBalra
             // 
-            this.buttonBalra.Location = new System.Drawing.Point(101, 428);
+            this.buttonBalra.Location = new System.Drawing.Point(106, 417);
             this.buttonBalra.Name = "buttonBalra";
             this.buttonBalra.Size = new System.Drawing.Size(75, 75);
             this.buttonBalra.TabIndex = 4;
@@ -93,7 +95,7 @@ namespace _2045
             // 
             // buttonValtas
             // 
-            this.buttonValtas.Location = new System.Drawing.Point(183, 428);
+            this.buttonValtas.Location = new System.Drawing.Point(188, 417);
             this.buttonValtas.Name = "buttonValtas";
             this.buttonValtas.Size = new System.Drawing.Size(75, 75);
             this.buttonValtas.TabIndex = 0;
@@ -102,11 +104,21 @@ namespace _2045
             this.buttonValtas.Visible = false;
             this.buttonValtas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.buttonValtas_KeyDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::_2045.Properties.Resources.Sussy;
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(482, 236);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 609);
+            this.ClientSize = new System.Drawing.Size(469, 609);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonValtas);
             this.Controls.Add(this.buttonBalra);
             this.Controls.Add(this.buttonLe);
@@ -114,7 +126,8 @@ namespace _2045
             this.Controls.Add(this.buttonFel);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "2048";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -127,6 +140,7 @@ namespace _2045
         private System.Windows.Forms.Button buttonLe;
         private System.Windows.Forms.Button buttonBalra;
         private System.Windows.Forms.Button buttonValtas;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

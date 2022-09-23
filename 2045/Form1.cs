@@ -30,6 +30,7 @@ namespace _2045
 
         private void button1_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
             buttonBalra.Visible = true;
             buttonFel.Visible = true;
             buttonJobbra.Visible = true;
