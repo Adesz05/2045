@@ -29,6 +29,7 @@ namespace _2045
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.buttonFel = new System.Windows.Forms.Button();
             this.buttonJobbra = new System.Windows.Forms.Button();
@@ -106,10 +107,10 @@ namespace _2045
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::_2045.Properties.Resources.Sussy;
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 51);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(482, 236);
+            this.pictureBox1.Size = new System.Drawing.Size(479, 237);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -117,7 +118,7 @@ namespace _2045
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 609);
+            this.ClientSize = new System.Drawing.Size(479, 609);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonValtas);
             this.Controls.Add(this.buttonBalra);
