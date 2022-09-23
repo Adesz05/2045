@@ -42,7 +42,7 @@ namespace _2045
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(191, 417);
+            this.button1.Location = new System.Drawing.Point(287, 500);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace _2045
             // 
             // buttonFel
             // 
-            this.buttonFel.Location = new System.Drawing.Point(191, 336);
+            this.buttonFel.Location = new System.Drawing.Point(287, 419);
             this.buttonFel.Name = "buttonFel";
             this.buttonFel.Size = new System.Drawing.Size(75, 75);
             this.buttonFel.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace _2045
             // 
             // buttonJobbra
             // 
-            this.buttonJobbra.Location = new System.Drawing.Point(272, 417);
+            this.buttonJobbra.Location = new System.Drawing.Point(368, 500);
             this.buttonJobbra.Name = "buttonJobbra";
             this.buttonJobbra.Size = new System.Drawing.Size(75, 75);
             this.buttonJobbra.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace _2045
             // 
             // buttonLe
             // 
-            this.buttonLe.Location = new System.Drawing.Point(191, 498);
+            this.buttonLe.Location = new System.Drawing.Point(287, 581);
             this.buttonLe.Name = "buttonLe";
             this.buttonLe.Size = new System.Drawing.Size(75, 75);
             this.buttonLe.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace _2045
             // 
             // buttonBalra
             // 
-            this.buttonBalra.Location = new System.Drawing.Point(110, 417);
+            this.buttonBalra.Location = new System.Drawing.Point(206, 500);
             this.buttonBalra.Name = "buttonBalra";
             this.buttonBalra.Size = new System.Drawing.Size(75, 75);
             this.buttonBalra.TabIndex = 4;
@@ -96,7 +96,7 @@ namespace _2045
             // 
             // buttonValtas
             // 
-            this.buttonValtas.Location = new System.Drawing.Point(192, 417);
+            this.buttonValtas.Location = new System.Drawing.Point(288, 500);
             this.buttonValtas.Name = "buttonValtas";
             this.buttonValtas.Size = new System.Drawing.Size(75, 75);
             this.buttonValtas.TabIndex = 0;
@@ -108,7 +108,7 @@ namespace _2045
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(87, 67);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(479, 237);
             this.pictureBox1.TabIndex = 5;
@@ -118,7 +118,7 @@ namespace _2045
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 609);
+            this.ClientSize = new System.Drawing.Size(639, 695);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonValtas);
             this.Controls.Add(this.buttonBalra);

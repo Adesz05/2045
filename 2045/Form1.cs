@@ -16,7 +16,7 @@ namespace _2045
     {
        public  static int foglaltelemek = 0;
         static bool  valtozas = false;
-        static int szorzo = 4;
+        static int szorzo = 5;
         static int[,] matrix = new int[szorzo, szorzo];
         static int[,] matrixmasolat = new int[szorzo, szorzo];
         static bool[,] boolmatrix = new bool[szorzo, szorzo];
@@ -183,7 +183,7 @@ namespace _2045
                     Label label = new Label();
                     label.Size = new Size(50, 50);
                     label.BackColor = Color.White;
-                    label.Location = new Point(100 + j*64,50+i*64);
+                    label.Location = new Point(25*szorzo + j*64, 51+i*64);
                     label.TextAlign = ContentAlignment.MiddleCenter;
                     label.Font = new Font("Arial", 12, FontStyle.Bold);
                     if (matrix[i,j] == 0)
