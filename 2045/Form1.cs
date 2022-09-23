@@ -50,24 +50,25 @@ namespace _2045
 
             while (true)
             {
-                rszam = r.Next(1, 3) * 2;
+                rszam = r.Next(1, 3) * 128;
 
-                rsor = r.Next(0, 4);
-                roszlop = r.Next(0, 4);
+                rsor = r.Next(0, szorzo);
+                roszlop = r.Next(0, szorzo);
 
-                if (foglaltelemek > 15)
+                /*if (foglaltelemek > szorzo*szorzo-1)
                 {
-                    MessageBox.Show("Vesztettél");
+                    MessageBox.Show("Vesztettél cicus");
                     break;
                 }
                 else
                 {
-                    if (matrix[rsor, roszlop] == 0)
-                    {
-                        matrix[rsor, roszlop] = rszam;
-                        //foglaltelemek++;
-                        break;
-                    }
+                    
+                }*/
+                if (matrix[rsor, roszlop] == 0)
+                {
+                    matrix[rsor, roszlop] = rszam;
+                    //foglaltelemek++;
+                    break;
                 }
             }
             Frissit2();
@@ -143,6 +144,8 @@ namespace _2045
                     {
                         matrixlabel[i, j].BackColor = Color.FromArgb(240, 196, 27);
                         matrixlabel[i, j].ForeColor = Color.White;
+                        MessageBox.Show("Nyertél!");
+                        Close();
                     }
 
 
@@ -303,13 +306,13 @@ namespace _2045
 
         private void JobbraFele()
         {
-            for (int sor = 3; sor > -1; sor--)
+            for (int sor = szorzo - 1; sor > -1; sor--)
             {
-                for (int oszlop = 3; oszlop > -1; oszlop--)
+                for (int oszlop = szorzo - 1; oszlop > -1; oszlop--)
                 {
                     if (matrix[sor, oszlop] != 0)
                     {
-                        for (int i = 0; i < 3 - oszlop; i++)
+                        for (int i = 0; i < szorzo - 1 - oszlop; i++)
                         {
 
                             if (matrix[sor, oszlop + i + 1] == 0)
@@ -357,13 +360,13 @@ namespace _2045
 
         private void LeFele()
         {
-            for (int sor = 3; sor > -1; sor--)
+            for (int sor = szorzo-1; sor > -1; sor--)
             {
-                for (int oszlop = 3; oszlop > -1; oszlop--)
+                for (int oszlop = szorzo-1; oszlop > -1; oszlop--)
                 {
                     if (matrix[sor, oszlop] != 0)
                     {
-                        for (int i = 0; i < 3 - sor; i++)
+                        for (int i = 0; i < szorzo-1 - sor; i++)
                         {
 
                             if (matrix[sor + i + 1, oszlop] == 0)
