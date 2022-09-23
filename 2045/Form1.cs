@@ -16,12 +16,11 @@ namespace _2045
     {
        public  static int foglaltelemek = 0;
         static bool  valtozas = false;
-        static int szorzo = 5;
-        static int[,] matrix = new int[szorzo, szorzo];
-        static int[,] matrixmasolat = new int[szorzo, szorzo];
-        static bool[,] boolmatrix = new bool[szorzo, szorzo];
+        static int szorzo;
+        static int[,] matrix;
+        static bool[,] boolmatrix;
         static bool fel, le,jobbra, balra = false;
-        static System.Windows.Forms.Label[,] matrixlabel = new System.Windows.Forms.Label[szorzo, szorzo];
+        static System.Windows.Forms.Label[,] matrixlabel;
         public Form1()
         {
 
@@ -30,18 +29,10 @@ namespace _2045
 
         private void button1_Click(object sender, EventArgs e)
         {
-            pictureBox1.Visible = false;
-            buttonBalra.Visible = true;
-            buttonFel.Visible = true;
-            buttonJobbra.Visible = true;
-            buttonLe.Visible = true;
-            buttonValtas.Visible = true;
-            MatrixFeltoltes();
-            Frissit();
-            RandomSzamGeneralas();
-            RandomSzamGeneralas();
-            button1.Visible = false;
+            
+            //button1.Visible = false;
         }
+
 
         private void RandomSzamGeneralas()
         {
@@ -50,7 +41,7 @@ namespace _2045
 
             while (true)
             {
-                rszam = r.Next(1, 3) * 128;
+                rszam = r.Next(1, 3) * 2;
 
                 rsor = r.Next(0, szorzo);
                 roszlop = r.Next(0, szorzo);
@@ -281,7 +272,6 @@ namespace _2045
 
         private void Vesztettele()
         {
-            matrixmasolat = matrix;
             if (fel == true && le ==true&& jobbra == true && balra == true)
             {
                 MessageBox.Show("Vesztettél");
@@ -356,6 +346,50 @@ namespace _2045
         private void buttonLe_Click(object sender, EventArgs e)
         {
             LeFele();
+        }
+
+        private void amongeasy_Click(object sender, EventArgs e)
+        {
+            int nehezseg = 6;
+            JatekKezdes(nehezseg);
+        }
+
+        private void JatekKezdes(int nehezseg)
+        {
+            pictureBox1.Visible = false;
+            buttonBalra.Visible = true;
+            buttonFel.Visible = true;
+            buttonJobbra.Visible = true;
+            buttonLe.Visible = true;
+            buttonValtas.Visible = true;
+            amongeasy.Visible = false;
+            amongmedium.Visible = false;
+            amonghard.Visible = false;
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            szorzo = nehezseg;
+            matrix = new int[szorzo, szorzo];
+            boolmatrix = new bool[szorzo, szorzo];
+            matrixlabel = new System.Windows.Forms.Label[szorzo, szorzo];
+            //buttonValtas.Location = new Point(szorzo * 50, szorzo * 80);
+            MatrixFeltoltes();
+            Frissit();
+            RandomSzamGeneralas();
+            RandomSzamGeneralas();
+
+        }
+
+        private void amongmedium_Click(object sender, EventArgs e)
+        {
+            int nehezseg = 5;
+            JatekKezdes(nehezseg);
+        }
+
+        private void amonghard_Click(object sender, EventArgs e)
+        {
+            int nehezseg = 4;
+            JatekKezdes(nehezseg);
         }
 
         private void LeFele()
